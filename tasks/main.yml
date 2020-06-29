@@ -1,0 +1,16 @@
+---
+# tasks file for cdougan-setup_rootcert
+ - name: Copy file out
+   copy:
+     src: "{{ item }}"
+     dest: "/etc/pki/ca-trust/source/anchors/{{ item }}"
+     owner: root
+   with_items:
+     - rootcert-1.pem
+     - rootcert-2.pem
+   notify:
+     - enable_ca_cert
+     - extract_cert
+
+
+

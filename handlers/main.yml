@@ -1,0 +1,7 @@
+---
+# handlers file for cdougan-setup_rootcert
+ - name: enable_ca_cert
+   shell: update-ca-trust enable
+
+ - name: extract_cert
+   shell: update-ca-trust extract
